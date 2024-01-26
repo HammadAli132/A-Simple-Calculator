@@ -1,12 +1,14 @@
+:root {
+    --header-color: rgb(1, 38, 86);
+    --footer-color: rgb(26, 66, 80);
+    --header-text-color: rgb(131, 255, 239);
+    --footer-text-color: rgb(55, 209, 252);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --header-color: rgb(1, 38, 86);
-    --footer-color: rgb(26, 66, 80);
 }
 
 html {
@@ -14,8 +16,10 @@ html {
 }
 
 body {
-    min-height: 100%;
     background-image: linear-gradient(to bottom, var(--header-color), var(--footer-color));
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -25,4 +29,14 @@ header {
     flex-direction: column;
     padding: 1em;
     line-height: 2.5rem;
+    color: var(--header-text-color);
+}
+
+footer {
+    margin-top: auto;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--footer-text-color);
 }
