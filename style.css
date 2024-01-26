@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-color: rgb(1, 38, 86);
+    --footer-color: rgb(26, 66, 80);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-image: linear-gradient(to bottom, var(--header-color), var(--footer-color));
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    line-height: 2.5rem;
+}
