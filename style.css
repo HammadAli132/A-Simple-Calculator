@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(to bottom, var(--header-color), var(--footer-color));
+    background: linear-gradient(to bottom, var(--header-color), var(--footer-color));
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,22 @@ header {
     padding: 1em;
     line-height: 2.5rem;
     color: var(--header-text-color);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    margin: auto 0;
+}
+
+#calculator-box {
+    height: 31.5em;
+    width: 28em;
+    border: 2px solid rgb(0, 255, 248);
+    box-shadow: 0px -1px 15px rgb(0, 255, 248);
+    border-radius: 10px;
 }
 
 footer {
