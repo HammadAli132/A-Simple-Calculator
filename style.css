@@ -2,7 +2,7 @@
     --header-color: rgb(1, 38, 86);
     --footer-color: rgb(26, 66, 80);
     --header-text-color: rgb(131, 255, 239);
-    --footer-text-color: rgb(55, 209, 252);
+    --footer-text-color: rgb(91, 216, 251);
 }
 
 * {
@@ -29,7 +29,14 @@ header {
     flex-direction: column;
     padding: 1em;
     line-height: 2.5rem;
+    text-align: center;
     color: var(--header-text-color);
+}
+
+.hr-ruler {
+    background-color: rgb(1, 161, 156);
+    height: 1px;
+    margin: 0 3em;
 }
 
 main {
@@ -44,8 +51,39 @@ main {
     height: 31.5em;
     width: 28em;
     border: 2px solid rgb(0, 255, 248);
-    box-shadow: 0px -1px 15px rgb(0, 255, 248);
+    box-shadow: 0px 0px 15px rgb(0, 255, 248);
     border-radius: 10px;
+    padding: .5em;
+}
+
+#screen {
+    height: 25%;
+    background-color: rgba(255, 255, 255, 0.762);
+    border-radius: 5px;
+}
+
+#dial-pad {
+    margin-top: .5em;
+    height: 73%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .5em;
+}
+
+.calculator-buttons {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all .2s;
+}
+
+.calculator-buttons:hover {
+    box-shadow: 0 0 10px aqua;
+    cursor: pointer;
 }
 
 footer {
@@ -55,4 +93,37 @@ footer {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--footer-text-color);
+}
+
+@media screen and (max-width: 470px) {
+    #calculator-box {
+        height: 30em;
+        width: 25em;
+    }
+
+    header, footer {
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #calculator-box {
+        height: 28em;
+        width: 23em;
+    }
+
+    header, footer {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #calculator-box {
+        height: 25em;
+        width: 20em;
+    }
+
+    header, footer {
+        font-size: .7rem;
+    }
 }
