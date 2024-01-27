@@ -5,6 +5,9 @@ const dialPad = document.getElementById('dial-pad');
 let expression = "";
 let result;
 
+calcScreen.style.cssText = "color: #474747; font-size: 48px; overflow: overlay;";
+calcScreen.innerText = "0";
+
 function calculate(num1, num2, operator) {
     switch(operator) {
         case '+': 
@@ -37,6 +40,8 @@ function performCalculation(string = "") {
     }
     if (num === "ANS") array.push(result);
     else array.push(num);
+    if (array[0] === "")
+        return "Math Error!";
     opr1 = parseFloat(array[0]);
     for (let i = 1; i < array.length; i++) {
         sign = array[i++];
@@ -51,6 +56,8 @@ function performCalculation(string = "") {
 function main() {
     dialPad.addEventListener('click', (event) => {
         const button = event.target;
+        if (expression === "Math Error!")
+            expression = "";
         if (expression === undefined || button.id === "all-clear-btn")
             expression = "";
         else if (button.id === "delete-btn")
@@ -58,21 +65,23 @@ function main() {
         else if (button.id === "power-btn")
             expression += "^";
         else if (button.id === "ans-btn") {
-            if (expression[expression.length - 1] !== '+' && expression[expression.length - 1] !== '-'  && expression[expression.length - 1] !== 'x' && expression[expression.length - 1] !== '/')
+            if (expression[expression.length - 1] !== '+' && expression[expression.length - 1] !== '-'  && expression[expression.length - 1] !== 'x' && expression[expression.length - 1] !== '/' && expression[expression.length - 1] !== '^')
                 expression = "ANS";
             else
                 expression += "ANS";
         }
         else if (button.id === "result-btn") {
             expression = performCalculation(expression);
-            result = expression;
+            if (expression === "Math Error!") {
+                result = "";
+            }
+            else
+                result = expression;
         }
         else if (button.classList.contains("calculator-buttons"))
             expression += button.innerText;
         calcScreen.innerText = expression;
-        calcScreen.style.cssText = "color: #474747; font-size: 48px; overflow: overlay;";
     });
-
 }
 
 main();
