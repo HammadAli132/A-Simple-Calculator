@@ -60,6 +60,10 @@ main {
     height: 25%;
     background-color: rgba(255, 255, 255, 0.762);
     border-radius: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
 }
 
 #dial-pad {

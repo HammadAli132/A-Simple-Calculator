@@ -1,6 +1,6 @@
 const date = document.getElementById('date');
 date.innerText = new Date().getFullYear();
-const calcScreen = document.getElementById('screen');
+const calcScreen = document.querySelector('#screen > p');
 const dialPad = document.getElementById('dial-pad');
 let expression = "";
 let result;
@@ -67,10 +67,10 @@ function main() {
             expression = performCalculation(expression);
             result = expression;
         }
-        else
+        else if (button.classList.contains("calculator-buttons"))
             expression += button.innerText;
-        calcScreen.style.cssText = "display: flex; justify-content: flex-end; align-items: flex-end; color: #474747; font-size: 48px; ";
         calcScreen.innerText = expression;
+        calcScreen.style.cssText = "color: #474747; font-size: 48px; overflow: overlay;";
     });
 
 }
